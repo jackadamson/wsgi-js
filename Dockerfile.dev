@@ -1,0 +1,7 @@
+FROM nginx:alpine
+
+RUN rm -rf /usr/share/nginx/html/*
+COPY nginx/mime.types /etc/nginx/mime.types
+VOLUME /usr/share/nginx/html
+
+CMD ["nginx", "-g", "daemon off;"]

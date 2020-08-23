@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Loading</title>
+</head>
+<body>
+<h1>Loading...</h1>
+</body>
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/s/webworker.js').then(function(registration) {
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+    }
+    // pyodideWorker = new Worker('./s/pyodide/webworker.js');
+    // pyodideWorker.onerror = (e) => {
+    //     console.log(`Error in pyodideWorker at ${e.filename}, Line: ${e.lineno}, ${e.message}`)
+    // }
+    //
+    // pyodideWorker.onmessage = (e) => {
+    //     const {results, error} = e.data
+    //     if (results) {
+    //         console.log('pyodideWorker return results: ', results)
+    //     } else if (error) {
+    //         console.log('pyodideWorker error: ', error)
+    //     }
+    // }
+    // function f(python) {
+    //     pyodideWorker.postMessage({python});
+    // }
+</script>
+</html>
