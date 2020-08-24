@@ -1,6 +1,14 @@
 # WSGI-js
 
-References:
-- https://github.com/iodide-project/pyodide/issues/613
+A python webserver that runs in the browser
 
-`docker run --rm -d --name wsgi-js -v $PWD/nginx:/etc/nginx/conf.d:ro -v $PWD:`
+## To Run
+
+```bash
+./makezip.sh
+docker-compose up -d --build
+```
+
+## References
+
+- https://github.com/iodide-project/pyodide/issues/613
